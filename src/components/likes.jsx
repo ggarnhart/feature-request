@@ -6,36 +6,29 @@ class Likes extends Component {
       <div className="likesDiv">
         <span className="timePosted" />
         <span>
-          {this.props.likes.value} {handleHeart(this.props.likes.clicked)}
+          {this.props.value} {this.handleHeart()}
         </span>
       </div>
     );
   }
 
-  //   countLikes = () => {
-  //     return this.state.value === 1 ? "like" : "likes";
-  //   };
-
-  handleHeart = clicked => {
-    if (clicked) {
-      return <i className="far fa-heart" />;
+  handleHeart = () => {
+    if (this.props.clicked) {
+      return (
+        <i
+          onClick={() => this.props.onLikeToggle(this.props.likes)}
+          className="fas fa-heart"
+        />
+      );
     } else {
-      return <i className="fas fa-heart" />;
+      return (
+        <i
+          onClick={() => this.props.onLikeToggle(this.props.likes)}
+          className="far fa-heart"
+        />
+      );
     }
   };
-
-  //   handleHeartClicked = () => {
-  //     const clicked = !clicked;
-  //     this.setState(clicked);
-
-  //     if (clicked) {
-  //       const value = value - 1;
-  //       this.setState(value);
-  //     } else {
-  //       const value = value + 1;
-  //       this.setState(value);
-  //     }
-  //   };
 }
 
 export default Likes;

@@ -14,6 +14,7 @@ class Cards extends Component {
         "https://cdn-images-1.medium.com/max/1200/1*-ez3ZpybzQIgxt2ltdH4YQ.png"
     },
     likes: {
+      id: 1,
       value: 1000,
       clicked: true
     }
@@ -26,16 +27,32 @@ class Cards extends Component {
           <div className="col-md-6 offset-md-3">
             <Hashtags hashtags={this.state.hashtags} />
             <FeatureInfo
-              title={this.state.feature.title}
-              subtitle={this.state.feature.subtitle}
-              imgSource={this.state.feature.imgSource}
+              title={this.state.featureRequests.title}
+              subtitle={this.state.featureRequests.subtitle}
+              imgSource={this.state.featureRequests.imgSource}
             />
-            <Likes value={this.state.likes.value} clicked={likes.clicked} />
+            <Likes
+              value={this.state.likes.value}
+              clicked={this.state.likes.clicked}
+              onLikeToggle={this.handleLikeToggled}
+            />
           </div>
         </div>
       </div>
     );
   }
+
+  handleLikeToggled = () => {
+    const likes = this.state.likes;
+    likes.clicked = !likes.clicked;
+
+    if (likes.clicked) {
+      likes.value = likes.value + 1;
+    } else {
+      likes.value = likes.value - 1;
+    }
+    this.setState({ likes });
+  };
 }
 
 export default Cards;
