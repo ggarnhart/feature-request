@@ -3,9 +3,11 @@ import React, { Component } from "react";
 class Hashtags extends Component {
   render() {
     return (
-      <div>
+      <div className="hashtags-div">
         {this.props.hashtags.map(hashtag => (
-          <span key={hashtag}>#{hashtag}</span>
+          <span className="font-weight-bold" key={hashtag}>
+            #{hashtag}{" "}
+          </span>
         ))}
       </div>
     );

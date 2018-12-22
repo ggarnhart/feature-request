@@ -10,8 +10,10 @@ class FeatureInfo extends Component {
   render() {
     return (
       <div className="featureInfoDiv">
-        <h1>{this.props.title}</h1>
-        <h3>{this.props.subtitle}</h3>
+        <div className="feature-text">
+          <h1>{this.props.title}</h1>
+          <h3>{this.props.subtitle}</h3>
+        </div>
         <img src={this.props.imgSource} />
       </div>
     );

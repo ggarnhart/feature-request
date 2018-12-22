@@ -24,7 +24,7 @@ class Cards extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-md-6 offset-md-3">
+          <div className="col-md-6 offset-md-3 card-div no-padding">
             <Hashtags hashtags={this.state.hashtags} />
             <FeatureInfo
               title={this.state.featureRequests.title}
@@ -44,13 +44,14 @@ class Cards extends Component {
 
   handleLikeToggled = () => {
     const likes = this.state.likes;
-    likes.clicked = !likes.clicked;
 
-    if (likes.clicked) {
+    if (!likes.clicked) {
       likes.value = likes.value + 1;
     } else {
       likes.value = likes.value - 1;
     }
+
+    likes.clicked = !likes.clicked;
     this.setState({ likes });
   };
 }

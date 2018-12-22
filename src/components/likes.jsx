@@ -17,14 +17,14 @@ class Likes extends Component {
       return (
         <i
           onClick={() => this.props.onLikeToggle(this.props.likes)}
-          className="fas fa-heart"
+          className="fas fa-heart red-heart"
         />
       );
     } else {
       return (
         <i
           onClick={() => this.props.onLikeToggle(this.props.likes)}
-          className="far fa-heart"
+          className="fas fa-heart"
         />
       );
     }

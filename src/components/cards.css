@@ -6,24 +6,51 @@
 
 .featureInfoDiv > img {
   object-fit: cover;
+  max-height: 50vh;
 }
 
-.featureInfoDiv > h1 {
+.feature-text > h1 {
   color: #323232;
 }
 
-.featureInfoDiv > h2,
-h3 {
+.feature-text > h3 {
   color: #4a4a4a;
+  font-weight: 400;
 }
 
 .card {
   border-radius: 10px;
 }
 
-.card-row {
-  height: 25vh;
+.card-div {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
 }
 
 .likesDiv {
+  border-radius: 0 0 20px 20px;
+  padding: 10px 15px;
+  color: white;
+  background: #00d0e5;
+}
+
+.hashtags-div {
+  background: #005797;
+  color: white;
+  margin: 0;
+  padding: 15px 15px;
+  border-radius: 20px 20px 0 0;
+  font-size: 18px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.red-heart {
+  color: #d20024;
+}
+
+.feature-text {
+  padding: 30px 15px;
 }
